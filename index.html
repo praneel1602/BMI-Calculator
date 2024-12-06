@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <img src="img/bmi.jpg">
+        <div class="input">
+            <input type="text" placeholder="Enter Your Age" id="age">
+            <br>
+            <br>
+            <input type="text" placeholder="Enter your height" id="height">
+            <select id="heightunit">
+                <option value="cm">Centimeter</option>
+                <option value="m">Meter</option>
+                <option value="ft">Feet</option>
+                <option value="inches">Inches</option>
+            </select>
+            <br>
+            <br>
+            <input type="text" placeholder="Enter your weight" id="weight">
+            <select id="weightunit">
+                <option value="kg">KiloGram</option>
+                <option value="g">Gram</option>
+                <option value="lbs">Lbs</option>
+            </select>
+            <br>
+            <br>
+            <input type="submit" value="Submit" id="submit">
+            <div class="msg">
+                <h2>Make Your life healthy</h2>
+                <img src="img/healthy.jpg">
+            </div>
+        </div>
+    </div>
+    <script>
+        const msg1=document.querySelector(".msg h2");
+        const image=document.querySelector(".msg img");
+        const sub=document.getElementById("submit");
+
+        function bmicalc(){
+
+        const htunit=document.getElementById("heightunit").value;
+        const wtunit=document.getElementById("weightunit").value;
+        const height=parseFloat(document.getElementById("height").value);
+        const weight=parseFloat(document.getElementById("weight").value);
+        const age=parseFloat(document.getElementById("age").value);
+
+            if(isNaN(height) || isNaN(weight) || isNaN(age)){
+                msg1.innerText="Invalid Input";
+                image.src="img/shock.jpg";
+                return;
+            }
+            let newheight=height;
+            if(htunit==="cm"){
+                newheight=(height)/100;
+                
+            }
+            else if(htunit==="m"){
+                newheight=(height)/1;
+            }
+            else if(htunit==="ft"){
+                newheight=((height)*0.3048);
+            }
+
+            else if(htunit==="inches"){
+                newheight=((height)*0.0254);
+            }
+
+            let newweight=weight;
+            if(wtunit==="g"){
+                newweight=(weight)/1000;
+            }
+            else if(wtunit==="kg"){
+                newweight=(weight)/1;
+            }
+            else if(wtunit==="lbs"){
+                newweight=((weight)*0.453);
+            }
+            const bmi=(newweight/(newheight*newheight)).toFixed(1);
+            let msg="";
+            let img="";
+            if(bmi<18.5){
+                msg=`Your BMI is ${bmi} and you are UnderWeight`;
+                img="img/skinny.png";
+            }
+            else if(bmi>=18.5 && bmi<=24.9){
+                msg=`Your BMI is ${bmi} and you are Healthy and Normal`;
+                img="img/fit.png";
+            }
+            else if(bmi>=25 && bmi<=34.9){
+                msg=`Your BMI is ${bmi} and you are Overweight`;
+                img="img/fat.png";
+            }
+            else if(bmi>=35 ){
+                msg=`Your BMI is ${bmi} and you are Severly Obese `;
+                img="img/obese.png";
+            }
+            msg1.innerText=msg;
+            image.src=img;
+        }
+        sub.addEventListener("click",bmicalc);
+
+    </script>
+</body>
+</html>

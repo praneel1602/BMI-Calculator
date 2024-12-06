@@ -1,0 +1,75 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+.card{
+    background-color: aquamarine;
+    width:50%;
+    padding:50px 50px;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 450px;
+    margin-right: 100px;
+    border-radius: 20px;
+}
+.card img{
+    width:80%;
+    margin-bottom: 30px;
+
+}
+.input input{
+    border:0;
+    outline: 0;
+    background: #ebfffc;
+    color: black;
+    font-weight: 500;
+    padding: 20px 25px;
+    height: 60px;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 16px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+.input input[type="submit"]{
+    cursor:pointer;
+}
+.input input[type="submit"]:hover{
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+}
+.input select{
+    border:0;
+    outline: 0;
+    background: #ebfffc;
+    color:#555;
+    padding: 20px 25px;
+    height: 60px;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 16px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    width:auto;
+    text-align: justify;
+}
+.msg h2{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.msg img {
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+    margin-top: 20px; /* Add some spacing above */
+    border-radius: 20px;
+    height: 120px; /* Reduce the height for better alignment */
+    width: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't overflow */
+}
