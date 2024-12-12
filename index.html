@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="card">
-        <img src="img/bmi.jpg">
+        <img src="bmi.jpg">
         <div class="input">
             <input type="text" placeholder="Enter Your Age" id="age">
             <br>
@@ -33,7 +33,7 @@
             <input type="submit" value="Submit" id="submit">
             <div class="msg">
                 <h2>Make Your life healthy</h2>
-                <img src="img/healthy.jpg">
+                <img src="healthy.jpg">
             </div>
         </div>
     </div>
@@ -52,7 +52,7 @@
 
             if(isNaN(height) || isNaN(weight) || isNaN(age)){
                 msg1.innerText="Invalid Input";
-                image.src="img/shock.jpg";
+                image.src="shock.jpg";
                 return;
             }
             let newheight=height;
@@ -86,19 +86,19 @@
             let img="";
             if(bmi<18.5){
                 msg=`Your BMI is ${bmi} and you are UnderWeight`;
-                img="img/skinny.png";
+                img="skinny.png";
             }
             else if(bmi>=18.5 && bmi<=24.9){
                 msg=`Your BMI is ${bmi} and you are Healthy and Normal`;
-                img="img/fit.png";
+                img="fit.png";
             }
             else if(bmi>=25 && bmi<=34.9){
                 msg=`Your BMI is ${bmi} and you are Overweight`;
-                img="img/fat.png";
+                img="fat.png";
             }
             else if(bmi>=35 ){
                 msg=`Your BMI is ${bmi} and you are Severly Obese `;
-                img="img/obese.png";
+                img="obese.png";
             }
             msg1.innerText=msg;
             image.src=img;
